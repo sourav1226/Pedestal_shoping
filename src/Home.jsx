@@ -169,25 +169,25 @@ const perPage3 = 3;
       <button className="bg-gray-500 text-white hover:bg-gray-600 hover:text-blue-900 ml-5 py-1 px-6 rounded-2xl font-bold transition-all duration-300  ">Apple New</button>
     
      <div className="absolute right-[30px] flex gap-4">
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://www.facebook.com/pedestaltech?mibextid=LQQJ4d&rdid=UdmsVeIYZs20JFAv&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252FBpK7vMUsjp1Srtxc%252F%253Fmibextid%253DLQQJ4d" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/facebook-icon.png" alt="Facebook"
            className="max-w-2.5 h-4"
        />
       </a>
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://www.instagram.com/pedestal_edtech?igsh=MWpxNG1mdmRmZ2Izbw==" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/instagram-icon.png" alt="instagram"
            className="max-w-4 h-4"
        />
       </a>
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://www.linkedin.com/company/pedestaltech/" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/linkdin-icon.png" alt="linkdin"
            className="max-w-3 h-3"
        />
       </a>
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://x.com/Pedestaltechno" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/thread-icon.png" alt="thread"
            className="max-w-3.5 h-3.5"
@@ -235,7 +235,7 @@ const perPage3 = 3;
   </select>
  <div className="w-20 h-5 mx-5 mb-6">
   <button className="bg-[#050978] text-white px-7 font-bold py-2 rounded-full hover:bg-white hover:text-black hover:border-2">
-    Login
+   <a href="Login">Login</a>
   </button>
   </div>
 
@@ -365,7 +365,7 @@ const perPage3 = 3;
       <div
         key={item.id}
         className="group border rounded-md overflow-hidden bg-white scale-100 hover:scale-105 transition-transform duration-300"
-      >
+      ><a href="product">
         <div className="relative">
           <img
             src={item.img}
@@ -381,11 +381,12 @@ const perPage3 = 3;
         </div>
 
         <div className="p-4 text-center">
-          <a href="" className="text-lg font-medium hover:text-red-600">
+          <a href="product" className="text-lg font-medium hover:text-red-600">
             {item.title}
           </a>
           <p className="text-sm text-gray-500 mt-1">{item.price}</p>
         </div>
+       </a>
       </div>
     ))}
    </div>
@@ -441,6 +442,7 @@ const perPage3 = 3;
             key={item.id}
             className="group border rounded-md overflow-hidden bg-white scale-100 hover:scale-105 transition-transform duration-300"
           >
+            <a href="product">
             <div className="relative">
               <img
                 src={item.img}
@@ -456,13 +458,14 @@ const perPage3 = 3;
             </div>
 
             <div className="p-4 text-center">
-                <a href="#" className="text-lg font-medium hover:text-red-600">
+                <a href="product" className="text-lg font-medium hover:text-red-600">
                 {item.title}
              </a>
               <p className="text-sm text-gray-500 mt-1">
                 {item.price}
               </p>
             </div>
+            </a>
           </div>
         ))}
     </div>
@@ -551,10 +554,11 @@ const perPage3 = 3;
       <div className="max-w-6xl ml-auto mr-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
         {cards.slice(page3 * perPage3, (page3 + 1) * perPage3).map((item, index) => (
+          
           <div
             key={index}
             className="bg-white rounded-lg overflow-hidden shadow scale-90 hover:scale-95 transition-transform duration-300"
-          >
+          > 
             <img
               src={item.img}
               alt={item.title}
@@ -590,7 +594,7 @@ const perPage3 = 3;
 </section>
 
 
- <section className="w-full bg-white py-10 ">
+<section className="w-full bg-white py-10 ">
       <div className=" mx-auto px-6 gap-40">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
@@ -617,7 +621,9 @@ const perPage3 = 3;
           ))}
         </div>
       </div>
-    </section>
+</section>
+
+
   <section className="w-full bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white">
   <div className="max-w-7xl mx-auto px-4 py-16">
 

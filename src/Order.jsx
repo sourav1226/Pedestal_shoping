@@ -1,9 +1,34 @@
 import { useState } from "react";
 
-function Index() {
-  const [open, setOpen] = useState(false);
+const items = [
+  {
+    title: "Free Home Delivery",
+    desc: "Provide free home delivery for all products over $100",
+    img:"image-1.jpeg",
+  },
+  {
+    title: "Quality Products",
+    desc: "We ensure the product quality that is our main goal",
+    img: "image-3.jpeg",
+  },
+  {
+    title: "3 Days Return",
+    desc: "Return product within 3 days for any product you buy",
+    img: "image-2.jpeg",
+  },
+  {
+    title: "Online Support",
+    desc: "We ensure the product quality that you can trust easily",
+    img: "image-4.jpeg",
+  },
+
+ 
+];
+
+function Home() {
+    const [open, setOpen] = useState(false);
   return (
-   <>
+    <>
 <section>
     <section className="hidden md:flex bg-[#050978] py-2">
      <div className="flex">
@@ -137,194 +162,216 @@ function Index() {
 </div>
     </nav>
 </section>
-
-
-
-   <section>
-    <header className="w-full border-b border-t ">
-    <div className="border-b border-t">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        {/* Left text */}
-        <h1 className="text-lg font-bold">
-          Diana Demo
-        </h1>
-
-        {/* Right  */}
-      <a href="#" className="mr-40"><img src="shopping.png" alt="shopping" className="w-8 h-8" /></a>
-      </div>
-    </div>
-    </header>
-   </section>
-
-  <section className="min-h-screen bg-white  justify-center">
-<div className="max-w-6xl  mx-auto px-6 py-10">
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-
-   <div className="w-auto bg-gray-50 lg:col-span-2 ">
-  {/* Contact */}
-  <h2 className="text-lg font-semibold mb-3">Contact</h2>
-
-  <input
-    type="text"
-    placeholder="Email or mobile phone number"
-    className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-2 focus:ring-1 focus:ring-black outline-none"
-  />
-
-  <label className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-    <input type="checkbox" />
-    Email me with news and offers
-  </label>
-
-  {/* Delivery */}
-  <h2 className="text-lg font-semibold mb-3">Delivery</h2>
-
-  <select className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-4">
-    <option>India</option>
-          <option>United States</option>
-          <option>United Kingdom</option>
-          <option>Canada</option>
-          <option>Australia</option>
-          <option>Afghanistan</option>
-          <option>Albania</option>
-          <option>Algeria</option>
-          <option>Andorra</option>
-          <option>Angola</option>
-          <option>Argentina</option>
-          <option>Armenia</option>
-          <option>Austria</option>
-          <option>Azerbaijan</option>
-          <option>Bahamas</option> 
-  </select>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-    <input
-      type="text"
-      placeholder="First name (optional)"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-    <input
-      type="text"
-      placeholder="Last name"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-  </div>
-
-  <input
-    type="text"
-    placeholder="Address"
-    className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-4"
-  />
-
-  <input
-    type="text"
-    placeholder="Apartment, suite, etc. (optional)"
-    className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-4"
-  />
-
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-    <input
-      type="text"
-      placeholder="City"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-    <select className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm">
-      <option>Rajasthan</option>
-    </select>
-    <input
-      type="text"
-      placeholder="PIN code"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-  </div>
-
-  <label className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-    <input type="checkbox" />
-    Save this information for next time
-  </label>
-
-  {/* Shipping */}
-  <h2 className="text-lg font-semibold mb-3">Shipping method</h2>
-  <div className="border-2 border-[#050978] rounded-md px-4 py-3 flex justify-between text-sm mb-6">
-    <span>International Shipping</span>
-    <span>$0.16</span>
-  </div>
-
-  {/* Payment */}
-  <h2 className="text-lg font-semibold mb-1">Payment</h2>
-  <p className="text-xs text-gray-500 mb-3">
-    All transactions are secure and encrypted.
-  </p>
-
-  <div className="bg-gray-100 h-30 border-2 border-[#050978] rounded-md p-6 text-center text-sm text-gray-500">
-    💳 This store can't accept payments right now.
-  </div>
-  <button
-  disabled
-  className="
-    w-full bg-[#050978] text-white hover:bg-white hover:text-black hover:border-2 mt-6 mb-10 text-lg py-3 rounded-md cursor-not-allowed">
-  Pay now
-</button>
-   </div>
-
-
-     <div className="w-auto h-80 bg-[#050978] text-white p-6 rounded-lg ">
-
-      <div className="flex justify-between mb-6">
-        <div className="flex gap-10">
-          <div className="relative">
-            <img
-              src="https://diana-demo.myshopify.com/cdn/shop/products/product_1_large.png?v=1548838312"
-              className="w-14 h-14 rounded border"
-            />
-            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              1
-            </span>
-          </div>
-
-          <div className="gap-y-">
-            <p className="text-sm font-medium ">
-              New and sale badge product
-            </p>
-            <p className="text-xs text-gray-500">s / red</p>
-            <p className="text-xs text-gray-400">$66.00/3g</p>
-          </div>
+    
+     
+      <section className="w-full bg-gradient-to-b from-[#050978] to-[#050978]">
+        <div className="max-w-7xl mx-auto px-4 py-6 text-center">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold mb-2">
+            Products
+          </h1>
+          <p className="text-gray-300 text-sm">
+            <span className="hover:text-red-500 cursor-pointer">Home</span>
+            <span className="mx-2">-</span> Products
+          </p>
         </div>
+      </section>
 
-        <span className="text-sm font-medium">$110.00</span>
-      </div>
+    
+      <section className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+      
+        <section className="space-y-8">
+          <div>
+            <div className="bg-gray-200 py-2 text-center font-semibold">
+              Availability
+            </div>
+            <label className="flex gap-2 text-sm mt-3">
+              <input type="checkbox" /> In stock (30)
+            </label>
+            <label className="flex gap-2 text-sm">
+              <input type="checkbox" /> Out of stock (18)
+            </label>
+          </div>
 
-      <div className="border-t mb-10"></div>
+          <div className="space-y-4">
+            <div className="border bg-gray-50 py-2 text-center font-medium">
+              Price
+            </div>
 
-      <div className="flex justify-between text-sm mb-2">
-        <span className=" text-white">Subtotal</span>
-        <span>$110.00</span>
-      </div>
+            <div className="flex flex-wrap gap-2 items-center text-sm">
+              <span>$</span>
+              <input
+                type="number"
+                placeholder="0.00"
+                className="border w-20 px-2 py-1 text-center outline-none"
+              />
+              <span>From</span>
+              <span>$</span>
+              <input
+                type="number"
+                placeholder="110.00"
+                className="border w-20 px-2 py-1 text-center outline-none"
+              />
+              <span>To</span>
+            </div>
 
-      <div className="flex justify-between text-sm mb-8">
-        <span className="text-white">Shipping</span>
-        <span>$0.16</span>
-      </div>
+            <button className="bg-black text-red-500 px-6 py-2 rounded-full hover:bg-red-500 hover:text-black font-semibold">
+              Filter
+            </button>
+          </div>
+        </section>
 
-      <div className="border-t mb-4"></div>
-
-      <div className="flex justify-between items-center">
-        <span className="font-semibold text-2xl">Total</span>
-        <span className="font-semibold flex">
-          <span className="text-[15px] mt-1.5 text-gray-400 mr-1">USD</span>
-          <h1 className="text-[20px]"> $110.16</h1> 
-        </span>
-      </div>
-     </div>
-
- </div> 
    
-</div>
+        <section className="lg:col-span-3">
+          
+       
+          <div className="flex flex-col sm:flex-row justify-between gap-4 border-b pb-4 mb-8">
+            <div className="flex items-center gap-4">
+              <button className="text-red-500">
+                <svg width="18" height="18" fill="currentColor">
+                  <rect width="6" height="6" />
+                  <rect x="12" width="6" height="6" />
+                  <rect y="12" width="6" height="6" />
+                  <rect x="12" y="12" width="6" height="6" />
+                </svg>
+              </button>
 
-</section>
+              <button
+                className="hover:text-red-600"
+                onClick={() =>
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }
+              >
+                <svg width="20" height="18" fill="currentColor">
+                  <rect width="20" height="3" />
+                  <rect y="7" width="20" height="3" />
+                  <rect y="14" width="20" height="3" />
+                </svg>
+              </button>
 
-<section className="w-full bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white">
+              <span className="text-sm text-gray-700">
+                Showing 1 - 15 of 33 result
+              </span>
+            </div>
+
+            <select className="border rounded-full px-4 py-2 text-sm">
+              <option>Featured</option>
+            <option>Best Selling</option>
+            <option>Alphabetically, A-Z</option>
+            <option>Alphabetically, Z-A</option>
+            <option>Price, low to high</option>
+            <option>Price, high to low</option>
+            <option>Date, now to old</option>
+            <option>Date, old to new</option>
+            </select>
+          </div>
+
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            
+            <div className="bg-white p-5 rounded shadow text-center">
+              <img
+                src="https://diana-demo.myshopify.com/cdn/shop/products/product_1.png"
+                className="mx-auto h-48 object-contain mb-4"
+                alt=""
+              />
+              <h4 className="text-sm hover:text-red-500 cursor-pointer">
+                New and sale badge product
+              </h4>
+              <p className="text-sm mt-2">
+                <span className="font-semibold">$110.00</span>
+                <span className="line-through ml-2 text-gray-400">$130.00</span>
+              </p>
+            </div>
+
+           
+            <div className="bg-white p-5 rounded shadow text-center">
+              <img
+                src="https://diana-demo.myshopify.com/cdn/shop/products/product_2.png"
+                className="mx-auto h-48 object-contain mb-4"
+                alt=""
+              />
+              <h4 className="text-sm hover:text-red-500 cursor-pointer">
+                Large title testing product
+              </h4>
+              <p className="font-semibold">$19.00</p>
+            </div>
+
+          
+            <div className="bg-white p-5 rounded shadow text-center">
+              <img
+                src="https://diana-demo.myshopify.com/cdn/shop/products/product_3.png"
+                className="mx-auto h-48 object-contain mb-4"
+                alt=""
+              />
+              <h4 className="text-sm hover:text-red-500 cursor-pointer">
+                Product with video
+              </h4>
+              <p className="font-semibold">$39.00</p>
+            </div>
+    
+            <div className="bg-white p-5 rounded shadow text-center">
+              <img
+                src="https://diana-demo.myshopify.com/cdn/shop/products/product_3.png"
+                className="mx-auto h-48 object-contain mb-4"
+                alt=""
+              />
+              <h4 className="text-sm hover:text-red-500 cursor-pointer">
+                Product with video
+              </h4>
+              <p className="font-semibold">$39.00</p>
+            </div>
+
+
+            
+          
+
+          </div>
+        </section>
+      </section>
+
+     
+      <section className="flex justify-center py-6">
+        <div className="flex gap-4 text-gray-600 text-sm">
+          <span className="opacity-40 cursor-not-allowed">‹ Back</span>
+          <span className="font-semibold text-black">1</span>
+          <span className="hover:text-red-500 cursor-pointer">2</span>
+          <span className="hover:text-red-500 cursor-pointer">3</span>
+          <span className="hover:text-red-500 cursor-pointer">Next ›</span>
+        </div>
+      </section>
+
+      <section className="w-full bg-white py-10">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {items.map((item, index) => (
+            <div key={index} className="flex gap-4 items-start">
+              
+            
+             <img
+  src={item.img}
+  alt={item.title}
+  className="w-20 h-20 object-contain transition-transform duration-700 hover:rotate-[360deg]"
+/>
+
+         
+              <div>
+                <h4 className="font-semibold text-base mb-1">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {item.desc}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="w-full bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white">
   <div className="max-w-7xl mx-auto px-4 py-16">
 
     {/* Heading */}
@@ -430,9 +477,9 @@ function Index() {
 </section>
 
 
-
-   </>
+    
+    </>
   );
 }
 
-export default Index;
+export default Home;

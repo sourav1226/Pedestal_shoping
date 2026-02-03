@@ -8,7 +8,7 @@ function Login() {
 
   return (
     <>
-     <section>
+    <section>
     <section className="hidden md:flex bg-[#050978] py-2">
      <div className="flex">
       <h3 className="ml-10 font-bold text-white mt-0.5">
@@ -17,25 +17,25 @@ function Login() {
       <button className="bg-gray-500 text-white hover:bg-gray-600 hover:text-blue-900 ml-5 py-1 px-6 rounded-2xl font-bold transition-all duration-300  ">Apple New</button>
     
      <div className="absolute right-[30px] flex gap-4">
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://www.facebook.com/pedestaltech?mibextid=LQQJ4d&rdid=UdmsVeIYZs20JFAv&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252FBpK7vMUsjp1Srtxc%252F%253Fmibextid%253DLQQJ4d" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/facebook-icon.png" alt="Facebook"
            className="max-w-2.5 h-4"
        />
       </a>
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://www.instagram.com/pedestal_edtech?igsh=MWpxNG1mdmRmZ2Izbw==" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/instagram-icon.png" alt="instagram"
            className="max-w-4 h-4"
        />
       </a>
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://www.linkedin.com/company/pedestaltech/" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/linkdin-icon.png" alt="linkdin"
            className="max-w-3 h-3"
        />
       </a>
-      <a href="#" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
+      <a href="https://x.com/Pedestaltechno" className="flex items-center justify-center w-6 h-6 rounded-full hover:scale-105 hover:shadow-2xs bg-white">
         <img
            src="https://pedestaltechnoworld.com/front-end/asset/images/icons/thread-icon.png" alt="thread"
            className="max-w-3.5 h-3.5"
@@ -83,7 +83,7 @@ function Login() {
   </select>
  <div className="w-20 h-5 mx-5 mb-6">
   <button className="bg-[#050978] text-white px-7 font-bold py-2 rounded-full hover:bg-white hover:text-black hover:border-2">
-    Login
+   <a href="Login">Login</a>
   </button>
   </div>
 
@@ -140,7 +140,7 @@ function Login() {
 </div>
 </div>
     </nav>
-     </section>
+    </section>
 
     <section>
       <div className="min-h-150 flex items-center justify-center bg-white">
@@ -189,12 +189,12 @@ function Login() {
                 Remember me
               </label>
               <span className="text-red-500 font-medium hover:text-red-400 cursor-pointer">
-                Forgot Password
+               <a href="forgot-password">Forgot Password</a>
               </span>
             </div>
 
             <button className="w-full  hover:bg-blue-800  bg-[#050978] text-white py-3 rounded-md font-bold hover:opacity-90 transition">
-              Login
+              <a href="Login">Login</a>
             </button>
 
             <p className="text-center text-sm mt-4 font-medium text-[15px]">

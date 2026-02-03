@@ -1,9 +1,76 @@
-import { useState } from "react";
 
-function Index() {
-  const [open, setOpen] = useState(false);
-  return (
-   <>
+import { useState } from "react";
+import { Truck, Award, RotateCcw, Headphones } from "lucide-react";
+
+
+
+
+function Product() {
+const images = [
+    "https://diana-demo.myshopify.com/cdn/shop/products/product_1_compact.png?v=1548838312",
+    "https://diana-demo.myshopify.com/cdn/shop/products/product_2_compact.png?v=1548838314",
+    "https://diana-demo.myshopify.com/cdn/shop/products/product_3_compact.png?v=1548838316",
+    "https://diana-demo.myshopify.com/cdn/shop/products/product_4_compact.png?v=1548838320",
+  ];
+  const items = [
+  {
+    title: "Free Home Delivery",
+    desc: "Provide free home delivery for all products over $100",
+    img:"image1.png",
+  },
+  {
+    title: "Quality Products",
+    desc: "We ensure the product quality that is our main goal",
+    img: "image2.png",
+  },
+  {
+    title: "3 Days Return",
+    desc: "Return product within 3 days for any product you buy",
+    img: "image3.png",
+  },
+  {
+    title: "Online Support",
+    desc: "We ensure the product quality that you can trust easily",
+    img: "image4.png",
+  },
+
+ 
+];
+
+  const [activeImg, setActiveImg] = useState(0);
+  const [qty, setQty] = useState(1);
+
+  const prevImg = () => {
+    setActiveImg(activeImg === 0 ? images.length - 1 : activeImg - 1);
+  };
+
+  const nextImg = () => {
+    setActiveImg(activeImg === images.length - 1 ? 0 : activeImg + 1);
+  };
+
+   
+
+   const [comments, setComments] = useState([]);
+  const [text, setText] = useState("");
+  
+
+  const handleSubmit = () => {
+    if (!text.trim()) return;
+
+    setComments([
+      ...comments,
+      { id: Date.now(), text },
+    ]);
+    setText("");
+  };
+
+
+
+  const [open, setOpen] = useState(false);    
+
+
+  
+  return <>
 <section>
     <section className="hidden md:flex bg-[#050978] py-2">
      <div className="flex">
@@ -138,193 +205,175 @@ function Index() {
     </nav>
 </section>
 
+<section className="w-full bg-gradient-to-b from-[#050978] to-[#050978]">
+        <div className="max-w-7xl mx-auto px-4 py-6 text-center">
+<h1 className="text-4xl md:text-5xl font-light text-white tracking-wide">
+1. New and sale badge product
+</h1>
 
 
-   <section>
-    <header className="w-full border-b border-t ">
-    <div className="border-b border-t">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        {/* Left text */}
-        <h1 className="text-lg font-bold">
-          Diana Demo
-        </h1>
+<p className="mt-4 text-sm text-gray-300">
+<a className="text-gray-400 hover:text-red-500" href="">Home</a>
+<span className="mx-2">-</span>
+<span className="text-white">1. New and sale badge product</span>
+</p>
+</div>
+       </section>
 
-        {/* Right  */}
-      <a href="#" className="mr-40"><img src="shopping.png" alt="shopping" className="w-8 h-8" /></a>
-      </div>
-    </div>
-    </header>
-   </section>
+        <section className="max-w-6xl mx-auto px-4 py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-  <section className="min-h-screen bg-white  justify-center">
-<div className="max-w-6xl  mx-auto px-6 py-10">
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-
-   <div className="w-auto bg-gray-50 lg:col-span-2 ">
-  {/* Contact */}
-  <h2 className="text-lg font-semibold mb-3">Contact</h2>
-
-  <input
-    type="text"
-    placeholder="Email or mobile phone number"
-    className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-2 focus:ring-1 focus:ring-black outline-none"
-  />
-
-  <label className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-    <input type="checkbox" />
-    Email me with news and offers
-  </label>
-
-  {/* Delivery */}
-  <h2 className="text-lg font-semibold mb-3">Delivery</h2>
-
-  <select className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-4">
-    <option>India</option>
-          <option>United States</option>
-          <option>United Kingdom</option>
-          <option>Canada</option>
-          <option>Australia</option>
-          <option>Afghanistan</option>
-          <option>Albania</option>
-          <option>Algeria</option>
-          <option>Andorra</option>
-          <option>Angola</option>
-          <option>Argentina</option>
-          <option>Armenia</option>
-          <option>Austria</option>
-          <option>Azerbaijan</option>
-          <option>Bahamas</option> 
-  </select>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-    <input
-      type="text"
-      placeholder="First name (optional)"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-    <input
-      type="text"
-      placeholder="Last name"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-  </div>
-
-  <input
-    type="text"
-    placeholder="Address"
-    className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-4"
-  />
-
-  <input
-    type="text"
-    placeholder="Apartment, suite, etc. (optional)"
-    className="w-full border-2 border-[#050978] rounded-md px-4 py-3 text-sm mb-4"
-  />
-
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-    <input
-      type="text"
-      placeholder="City"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-    <select className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm">
-      <option>Rajasthan</option>
-    </select>
-    <input
-      type="text"
-      placeholder="PIN code"
-      className="border-2 border-[#050978] rounded-md px-4 py-3 text-sm"
-    />
-  </div>
-
-  <label className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-    <input type="checkbox" />
-    Save this information for next time
-  </label>
-
-  {/* Shipping */}
-  <h2 className="text-lg font-semibold mb-3">Shipping method</h2>
-  <div className="border-2 border-[#050978] rounded-md px-4 py-3 flex justify-between text-sm mb-6">
-    <span>International Shipping</span>
-    <span>$0.16</span>
-  </div>
-
-  {/* Payment */}
-  <h2 className="text-lg font-semibold mb-1">Payment</h2>
-  <p className="text-xs text-gray-500 mb-3">
-    All transactions are secure and encrypted.
-  </p>
-
-  <div className="bg-gray-100 h-30 border-2 border-[#050978] rounded-md p-6 text-center text-sm text-gray-500">
-    💳 This store can't accept payments right now.
-  </div>
-  <button
-  disabled
-  className="
-    w-full bg-[#050978] text-white hover:bg-white hover:text-black hover:border-2 mt-6 mb-10 text-lg py-3 rounded-md cursor-not-allowed">
-  Pay now
-</button>
-   </div>
-
-
-     <div className="w-auto h-80 bg-[#050978] text-white p-6 rounded-lg ">
-
-      <div className="flex justify-between mb-6">
-        <div className="flex gap-10">
-          <div className="relative">
+        {/* LEFT IMAGE SECTION */}
+        <div>
+          <div className="bg-gray-100 p-4 flex items-center justify-center rounded">
             <img
-              src="https://diana-demo.myshopify.com/cdn/shop/products/product_1_large.png?v=1548838312"
-              className="w-14 h-14 rounded border"
+              src={images[activeImg]}
+              alt="Product"
+              className="w-72 object-contain"
             />
-            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-              1
-            </span>
           </div>
 
-          <div className="gap-y-">
-            <p className="text-sm font-medium ">
-              New and sale badge product
-            </p>
-            <p className="text-xs text-gray-500">s / red</p>
-            <p className="text-xs text-gray-400">$66.00/3g</p>
+          <div className="flex items-center justify-center gap-3 mt-4">
+            <button
+              onClick={prevImg}
+              className="w-9 h-9 rounded-full border hover:bg-gray-200"
+            >
+              ‹
+            </button>
+
+            {images.map((img, i) => (
+              <div
+                key={i}
+                onClick={() => setActiveImg(i)}
+                className={`p-1 border cursor-pointer rounded ${
+                  activeImg === i ? "border-red-500" : "border-gray-300"
+                }`}
+              >
+                <img src={img} alt="thumb" className="w-16" />
+              </div>
+            ))}
+
+            <button
+              onClick={nextImg}
+              className="w-9 h-9 rounded-full border hover:bg-gray-200"
+            >
+              ›
+            </button>
           </div>
         </div>
 
-        <span className="text-sm font-medium">$110.00</span>
+        {/* RIGHT DETAILS SECTION */}
+        <div>
+          <h1 className="text-xl font-semibold">
+            New and sale badge product
+          </h1>
+
+          <div className="flex items-center gap-3 mt-3">
+            <span className="text-2xl font-bold">$110.00</span>
+            <span className="text-gray-400 line-through">$130.00</span>
+          </div>
+
+          <p className="text-sm text-gray-500 mt-1">$31.43 / 2 g</p>
+
+          <p className="mt-4 text-gray-700 text-sm leading-relaxed">
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It
+            has roots in classical Latin literature from 45 BC.
+          </p>
+
+          {/* SIZE */}
+          <div className="mt-6 border-t pt-4">
+            <span className="font-medium text-sm">Size</span>
+            <div className="flex gap-4 mt-2 text-sm">
+              <button className="text-red-500 font-semibold">S</button>
+              <a href="">M</a>
+              <a href="">L</a>
+              <a href="">XL</a>
+              
+            </div>
+          </div>
+
+          {/* COLOR */}
+          <div className="mt-5 border-t pt-4">
+            <span className="font-medium text-sm">Color</span>
+            <div className="flex gap-3 mt-2">
+              <a href=""className="w-5 h-5 bg-red-500 border"></a>
+              <a href="" className="w-5 h-5 bg-green-600 border"></a>
+              <a href=""className="w-5 h-5 bg-blue-600 border"></a>
+                <a href="" className="w-5 h-5 bg-yellow-400 border" ></a>
+                <a href="" className="w-5 h-5 bg-white border"></a>
+                
+                 </div>
+          </div>
+
+          {/* QUANTITY */}
+          <div className="mt-5 border-t pt-4 flex items-center gap-4">
+            <span className="font-medium text-sm">Quantity</span>
+            <div className="flex border rounded">
+              
+              <button
+                className="px-3 bg-black text-white"
+                onClick={() => setQty(qty > 1 ? qty - 1 : 1)}
+              >
+                −
+              </button>
+              <span className="px-4 border-x">{qty}</span>
+              <button className="px-3 bg-black text-white" onClick={() => setQty(qty + 1)}>
+                +
+              </button>
+            </div>
+          </div>
+
+          {/* BUTTONS */}
+          <div className="mt-6 flex items-center gap-4">
+            <a href=""className="bg-red-500 text-white px-6 py-2 hover:bg-black">Add to cart</a>
+            
+             <a href="" className="text-xl w-5">♥</a> 
+            
+          </div>
+
+          
+
+          <button className="mt-4 w-30 bg-black text-white py-3 hover:bg-red-500">
+           <a href="index">Buy it now</a>
+          </button>
+
+          <p className="mt-4 text-xs text-gray-500">
+            Guaranteed safe checkout
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div className="border-t mb-10"></div>
+  <section className="w-full bg-white py-10 ">
+      <div className=" mx-auto px-6 gap-40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {items.map((item, index) => (
+            <div key={index} className="flex gap-4 items-start">
+              
+              {/* Image Icon */}
+             <img
+               src={item.img}
+               alt={item.title}
+               className="w-20 h-20 object-contain transition-transform duration-700 hover:rotate-[360deg]"
+            />
 
-      <div className="flex justify-between text-sm mb-2">
-        <span className=" text-white">Subtotal</span>
-        <span>$110.00</span>
+              {/* Text */}
+              <div>
+                <h4 className="font-semibold text-base mb-1">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-gray-600">
+                  {item.desc}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
       </div>
-
-      <div className="flex justify-between text-sm mb-8">
-        <span className="text-white">Shipping</span>
-        <span>$0.16</span>
-      </div>
-
-      <div className="border-t mb-4"></div>
-
-      <div className="flex justify-between items-center">
-        <span className="font-semibold text-2xl">Total</span>
-        <span className="font-semibold flex">
-          <span className="text-[15px] mt-1.5 text-gray-400 mr-1">USD</span>
-          <h1 className="text-[20px]"> $110.16</h1> 
-        </span>
-      </div>
-     </div>
-
- </div> 
-   
-</div>
-
 </section>
 
-<section className="w-full bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white">
+<footer className="w-full bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white">
   <div className="max-w-7xl mx-auto px-4 py-16">
 
     {/* Heading */}
@@ -427,12 +476,17 @@ function Index() {
 
     </div>
   </div>
-</section>
+</footer>
 
 
 
-   </>
-  );
+       
+
+
+
+
+  
+  
+  </>;
 }
-
-export default Index;
+export default Product;
