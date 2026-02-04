@@ -353,13 +353,13 @@ const perPage3 = 3;
   <section  className="relative w-auto pr-auto pl-auto mx-auto gap-20 px-6 py-3 gap-y-18">
        
     {/* Product Grid */}
-   <div className="grid grid-cols-1 mb-15  ml-auto mr-auto max-w-7xl sm:grid-cols-2 md:grid-cols-4 gap-6 gap-y-10 px-6 py-3 ">
+   <div className="grid grid-cols-1 mb-5   ml-auto mr-auto max-w-7xl  md:grid-cols-2 lg:grid-cols-4 gap-10 gap-y-auto top-10 ">
   {currentProducts
     .slice(page * perPage, (page + 1) * perPage)
     .map((item) => (
       <div
         key={item.id}
-        className="group border rounded-md overflow-hidden bg-white scale-100 hover:scale-105 transition-transform duration-300"
+        className="bg-white rounded-lg overflow-hidden shadow scale-90 hover:scale-95 transition-transform duration-300"
       ><a href="Order">
         <div className="relative">
           <img
@@ -434,13 +434,13 @@ const perPage3 = 3;
 
     {/* Product Grid section 2*/}
     
-    <div className=" max-w-7xl top-10 grid grid-cols-1 ml-auto mr-auto mb-10 sm:grid-cols-2 md:grid-cols-4 gap-10 px-6 py-3 ">
+    <div className=" max-w-7xl  ml-auto mr-auto mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 gap-y-22 top-10">
       {products
         .slice(page2 * perPage2, (page2 + 1) * perPage2)
         .map((item) => (
           <div
             key={item.id}
-            className="group border rounded-md overflow-hidden bg-white scale-100 hover:scale-105 transition-transform duration-300"
+            className="bg-white rounded-lg overflow-hidden shadow scale-90 hover:scale-95 transition-transform duration-300"
           >
             <a href="Order">
             <div className="relative">
@@ -472,10 +472,7 @@ const perPage3 = 3;
     
     </div>
 
-    
-   
-
- <div className="  flex  text-center justify-center gap-x-20 mb-0  sm:w-full sm:justify-center sm:px-4   sm:items-center ">
+     <div className="  flex  text-center justify-center gap-x-20   sm:w-full sm:justify-center sm:px-4   sm:items-center ">
     {/* Left Arrow */}
     <button
       onClick={() => setPage2(page2 > 0 ? page2 - 1 : 0)}
