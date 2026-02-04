@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const featured = [
   { id: 1, title: "Without shortcode product", price: "₹7,165.73", img: "https://diana-demo.myshopify.com/cdn/shop/products/product_1_large.png?v=1548838312" },
@@ -73,12 +74,12 @@ const cards = [
     desc: "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
   },
   {
-    img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+    img: "https://diana-demo.myshopify.com/cdn/shop/articles/blog_9.png?v=1549080646",
     title: "Make a type specimen book",
     desc: "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
   },
   {
-    img: "https://images.unsplash.com/photo-1503602642458-232111445657",
+    img: "https://diana-demo.myshopify.com/cdn/shop/articles/blog_8.png?v=1549080555",
     title: "Lorem Ipsum is simply dummy",
     desc: "Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
   },
@@ -251,33 +252,50 @@ const perPage3 = 3;
 </div>
 
        
- {open && (
-  <div className="absolute top-[110%] right-6 w-72 bg-white shadow-xl rounded-lg z-50">
-    <ul>
+ 
+
+{open && (
+  <div className="absolute top-full right-6 w-72 bg-white shadow-xl rounded-lg z-50">
+    <ul className="divide-y divide-dashed">
       {[
-        "About us",
-        "Campus Recruitment Trainings",
-        "Skill Club",
-        "Categories",
-        "Blogs",
-        "Forum",
-        "Internship",
-        "Sikar Center",
-        "Contact Us",
-        "Help & Support",
-        "Verify Certificate",
+        { name: "Product", link: "/product", internal: true },
+        { name: "About Us", link: "https://pedestaltechnoworld.com/about" },
+        { name: "Campus Recruitment Trainings", link: "https://pedestaltechnoworld.com/placement-guarantee-courses" },
+        { name: "Skill Club", link: "https://pedestaltechnoworld.com/pedestal-skill-club" },
+        { name: "Categories", link: "https://pedestaltechnoworld.com/categories" },
+        { name: "Blogs", link: "https://blog.pedestaltechnoworld.com/" },
+        { name: "Forum", link: "https://pedestaltechnoworld.com/forum" },
+        { name: "Internship", link: "https://internship.pedestaltechnoworld.com/" },
+        { name: "Sikar Center", link: "https://sikar.pedestaltechnoworld.com/" },
+        { name: "Contact Us", link: "https://pedestaltechnoworld.com/contact" },
+        { name: "Help & Support", link: "https://pedestaltechnoworld.com/help-support" },
+        { name: "Verify Certificate", link: "https://pedestaltechnoworld.com/truecopy" },
       ].map((item, i) => (
         <li
           key={i}
           onClick={() => setOpen(false)}
-          className="px-6 py-3 text-sm border-b border-dashed hover:bg-gray-50 cursor-pointer"
+          className="px-6 py-3 text-sm hover:bg-gray-50 cursor-pointer"
         >
-          {item}
+          {item.internal ? (
+            <Link to={item.link} className="font-bold block">
+              {item.name}
+            </Link>
+          ) : (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold block"
+            >
+              {item.name}
+            </a>
+          )}
         </li>
       ))}
     </ul>
   </div>
 )}
+
 
 
 
@@ -295,7 +313,7 @@ const perPage3 = 3;
 </section>
 
 <section
-          className="sm:w-full h-[80vh] bg-center bg-cover bg-no-repeat"
+          className=" w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]  bg-[20%] bg-cover"
           style={{backgroundImage: "url('https://diana-demo.myshopify.com/cdn/shop/files/slider-img_4.png?v=1613714145')",}}>
 </section>
 
@@ -330,47 +348,24 @@ const perPage3 = 3;
 
 
  {/* Product Grid Section */}
-<section className="w-full bg-[#050978] mt-5">
+<section className="w-full h-auto bg-[#050978] mt-5">
   
-  <section  className="relative w-auto pr-auto pl-auto mx-auto gap-20 px-6 py-12">
-
-    <div className="sm:flex  sm:justify-between sm:items-center ">
-    {/* Left Arrow */}
-    <button
-      onClick={() => setPage(page > 0 ? page - 1 : 0)}
-      className="absolute left-[30px] top-2/4 -translate-y-2/4
-      w-13 h-13 bg-white rounded-full shadow flex items-center   text-center justify-center "
-    >
-     <h1 className="text-5xl mb-4">‹</h1>
-    </button>
-
-       {/* Right Arrow */}
-    <button
-      onClick={() =>
-        setPage((page + 1) * perPage < products.length ? page + 1 : page)
-      }
-      className="absolute right-[30px] top-1/2 -translate-y-1/2
-      w-13 h-13 bg-white rounded-full shadow flex items-center justify-center"
-    >
-     <h1 className="text-5xl mb-4">›</h1>
-    </button>
-    </div>
-
-    
+  <section  className="relative w-auto pr-auto pl-auto mx-auto gap-20 px-6 py-3 gap-y-18">
+       
     {/* Product Grid */}
-   <div className="grid grid-cols-1 ml-auto mr-auto max-w-7xl sm:grid-cols-2 md:grid-cols-4 gap-6">
+   <div className="grid grid-cols-1 mb-15  ml-auto mr-auto max-w-7xl sm:grid-cols-2 md:grid-cols-4 gap-6 gap-y-10 px-6 py-3 ">
   {currentProducts
     .slice(page * perPage, (page + 1) * perPage)
     .map((item) => (
       <div
         key={item.id}
         className="group border rounded-md overflow-hidden bg-white scale-100 hover:scale-105 transition-transform duration-300"
-      ><a href="product">
+      ><a href="Order">
         <div className="relative">
           <img
             src={item.img}
             alt={item.title}
-            className="w-full h-56 object-cover"
+            className="w-full object-cover"
           />
 
           {item.badge && (
@@ -390,8 +385,32 @@ const perPage3 = 3;
       </div>
     ))}
    </div>
-
- 
+  
+   <div className=" flex  text-center justify-center gap-x-20   sm:w-full sm:justify-center sm:px-4 sm:top-10  sm:items-center ">
+    {/* Left Arrow */}
+    <div>
+    <button
+      onClick={() => setPage(page > 0 ? page - 1 : 0)}
+      className="  sm:absolute sm:left-4  left-[30px] top-2/4 -translate-y-2/4
+      w-13 h-13 bg-white rounded-full  shadow flex items-center   text-center justify-center  "
+    >
+     <h1 className="text-5xl mb-4">‹</h1>
+    </button>
+    </div>
+       {/* Right Arrow */}
+    <button
+      onClick={() =>
+        setPage((page + 1) * perPage < products.length ? page + 1 : page)
+      }
+      className="  top-1/2 -translate-y-1/2
+       w-13 h-13
+      bg-white rounded-full shadow
+      flex items-center justify-center
+      sm:absolute sm:right-4"
+    >
+     <h1 className="text-5xl mb-4">›</h1>
+    </button>
+    </div>
 
   </section>
 </section>
@@ -409,32 +428,13 @@ const perPage3 = 3;
      <p className="text-gray-700 mb-6">Some of our customers say that they trust us and buy our product without <br /> any hesitation because they believe us and always happy to buy our product.</p>
     
    </div>
- <section className="relative max-w-full mx-auto gap-20 bg-[#050978] px-6 py-12">
-  <div className="sm:flex sm:justify-between sm:items-center ">
-    {/* Left Arrow */}
-    <button
-      onClick={() => setPage2(page2 > 0 ? page2 - 1 : 0)}
-      className="absolute left-[35px] top-1/2 -translate-y-1/2
-      w-13 h-13 bg-white rounded-full shadow flex items-center justify-center"
-    >
-     <h1 className="text-5xl mb-4">‹</h1>
-    </button>
+ <section className="relative max-w-full   gap-y-15 bg-[#050978] px-6 py-3 ">
 
-       {/* Right Arrow */}
-    <button
-      onClick={() =>
-        setPage2((page2 + 1) * perPage2 < products.length ? page2 + 1 : page2)
-      }
-      className="absolute right-[+30px]  top-1/2 -translate-y-1/2
-      w-13 h-13 bg-white rounded-full shadow flex items-center gap-x-10 justify-center"
-    >
-     <h1 className="text-5xl mb-4">›</h1>
-    </button>
-    </div>
+  
 
     {/* Product Grid section 2*/}
-    <section className="relative max-w-7xl mx-auto gap-20 px-6 py-12">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    
+    <div className=" max-w-7xl top-10 grid grid-cols-1 ml-auto mr-auto mb-10 sm:grid-cols-2 md:grid-cols-4 gap-10 px-6 py-3 ">
       {products
         .slice(page2 * perPage2, (page2 + 1) * perPage2)
         .map((item) => (
@@ -442,12 +442,12 @@ const perPage3 = 3;
             key={item.id}
             className="group border rounded-md overflow-hidden bg-white scale-100 hover:scale-105 transition-transform duration-300"
           >
-            <a href="product">
+            <a href="Order">
             <div className="relative">
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full top-8 h-56 object-cover"
+                className="w-full top-8  object-cover"
               />
 
               {item.badge && (
@@ -468,9 +468,37 @@ const perPage3 = 3;
             </a>
           </div>
         ))}
-    </div>
-    </section>
 
+    
+    </div>
+
+    
+   
+
+ <div className="  flex  text-center justify-center gap-x-20 mb-0  sm:w-full sm:justify-center sm:px-4   sm:items-center ">
+    {/* Left Arrow */}
+    <button
+      onClick={() => setPage2(page2 > 0 ? page2 - 1 : 0)}
+      className="sm:absolute sm:left-4  left-[30px] top-2/4 -translate-y-2/4
+      w-13 h-13 bg-white rounded-full shadow flex items-center   text-center justify-center"
+    >
+     <h1 className="text-5xl mb-4">‹</h1>
+    </button>
+
+       {/* Right Arrow */}
+    <button
+      onClick={() =>
+        setPage2((page2 + 1) * perPage2 < products.length ? page2 + 1 : page2)
+      }
+      className="top-1/2 -translate-y-1/2
+       w-13 h-13
+      bg-white rounded-full shadow
+      flex items-center justify-center
+      sm:absolute sm:right-4"
+    >
+     <h1 className="text-5xl mb-4">›</h1>
+    </button>
+    </div>
 
  </section>
 
@@ -514,10 +542,10 @@ const perPage3 = 3;
 
 
 {/* Product Latest Blog  Section */}
-<section className="w-full py-10">
+<section className="w-full py-10 gap-y-15">
   {/* Heading */}
   <div className="max-w-7xl mx-auto px-6 text-center">
-    <h2 className="text-3xl font-bold mb-4">Latest Blog</h2>
+    <h2 className="text-3xl font-bold mb-4 text-red-600 ">Latest Blog</h2>
     <p className="text-gray-700 mb-6">
       Some of our customers say that they trust us and buy our <br />
       product without any hesitation because they believe us.
@@ -525,45 +553,24 @@ const perPage3 = 3;
   </div>
 
   {/* Blog Section */}
-  <div className="relative w-full bg-[#050978] py-1">
+  <div className="relative w-full bg-[#050978] py-1.5  gap-y-15">
     
     <div className="relative max-w-full mx-auto px-6">
-
-      {/* Left Arrow */}
-      <button
-        onClick={() => setPage3(page3 > 0 ? page3 - 1 : 0)}
-        className="absolute left-15 top-1/2 -translate-y-1/2
-        w-13 h-13 bg-white rounded-full shadow flex items-center justify-center"
-      >
-       <h1 className="text-5xl mb-4">‹</h1>
-      </button>
-
-      {/* Right Arrow */}
-      <button
-        onClick={() =>
-          setPage3((page3 + 1) * perPage3 < cards.length ? page3 + 1 : page3)
-        }
-        className="absolute right-15 top-1/2 -translate-y-1/2
-        w-13 h-13 bg-white rounded-full shadow flex items-center justify-center"
-      >
-
-        <h1 className="text-5xl mb-4">›</h1>
-      </button>
-
+     
       {/* Cards */}
-      <div className="max-w-6xl ml-auto mr-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+      <div className="max-w-7xl ml-auto mr-auto top-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 top-10 ">
         {cards.slice(page3 * perPage3, (page3 + 1) * perPage3).map((item, index) => (
           
           <div
             key={index}
             className="bg-white rounded-lg overflow-hidden shadow scale-90 hover:scale-95 transition-transform duration-300"
           > 
-            <img
-              src={item.img}
-              alt={item.title}
-              className="w-full h-56 object-cover"
-            />
+             <img
+    src={item.img}
+    alt={item.title}
+    className=" w-full top-4 mx-auto object-contain"
+  />
 
             <div className="p-6">
                   <a href="#" className="text-lg font-medium hover:text-red-600">
@@ -584,12 +591,40 @@ const perPage3 = 3;
             </div>
           </div>
         ))}
+
+      <div className="flex  text-center justify-center gap-x-20   sm:w-full sm:justify-center sm:px-4   sm:items-center">
+      {/* Left Arrow */}
+      <button
+        onClick={() => setPage3(page3 > 0 ? page3 - 1 : 0)}
+        className="sm:absolute sm:left-4  left-[30px] top-2/4 -translate-y-2/4
+      w-13 h-13 bg-white rounded-full shadow flex items-center   text-center justify-center"
+      >
+       <h1 className="text-5xl mb-4">‹</h1>
+      </button>
+
+      {/* Right Arrow */}
+      <button
+        onClick={() =>
+          setPage3((page3 + 1) * perPage3 < cards.length ? page3 + 1 : page3)
+        }
+        className="top-1/2 -translate-y-1/2
+       w-13 h-13
+      bg-white rounded-full shadow
+      flex items-center justify-center
+      sm:absolute sm:right-4"
+      >
+
+        <h1 className="text-5xl mb-4">›</h1>
+      </button>
+     </div>
       </div>
      </div>
 
 
 
     </div>
+
+      
   </div>
 </section>
 
@@ -638,7 +673,7 @@ const perPage3 = 3;
     </div>
 
     {/* Location Cards */}
-    <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-24">
+    <div className="hidden md:flex flex flex-col md:flex-row items-center justify-center gap-12 mb-24">
 
       <div className="bg-blue-900/40 backdrop-blur-lg rounded-3xl p-5 w-56 shadow-xl">
         <div className="bg-white rounded-2xl p-3">
@@ -675,17 +710,17 @@ const perPage3 = 3;
     {/* Footer */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-blue-200">
 
-      <div>
-        
-          <img className="text-white text-xl font-semibold mb-4" src="https://pedestaltechnoworld.com/front-end/asset/images/icons/footer-icon/footer-logo.png" alt="" />
-     
+      <div className="text-center ">
+         <div className="flex justify-center items-center">
+          <img className="text-white  text-xl font-semibold mb-4" src="https://pedestaltechnoworld.com/front-end/asset/images/icons/footer-icon/footer-logo.png" alt="" />
+         </div>
         <p>
           Pedestal Techno World Private Limited is an India’s leading
           EdTech company bridging the gap between industry and students.
         </p>
       </div>
 
-      <div>
+      <div className="text-center">
         <h4 className="text-white font-semibold mb-4">
           Explore Pedestal
         </h4>
@@ -699,7 +734,7 @@ const perPage3 = 3;
         </ul>
       </div>
 
-      <div>
+      <div className="text-center">
         <h4 className="text-white font-semibold mb-4">
           Top Learning Tracks
         </h4>
@@ -713,7 +748,7 @@ const perPage3 = 3;
         </ul>
       </div>
 
-      <div>
+      <div className="text-center">
         <h4 className="text-white font-semibold mb-4">
           Connect With Us
         </h4>

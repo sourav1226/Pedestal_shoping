@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home.jsx";
-import Order from "./Order.jsx";
+import Product from "./product.jsx";
 import Index from "./index";
 import Login from "./Login";
 import Register from "./register";
-import Product from "./product.jsx";
+import Order from "./Order.jsx";
 import ForgotPassword from "./forgot-password.jsx";
 
 function App() {

@@ -96,33 +96,50 @@ function About() {
 </div>
 
        
- {open && (
-  <div className="absolute top-[110%] right-6 w-72 bg-white shadow-xl rounded-lg z-50">
-    <ul>
+ 
+
+{open && (
+  <div className="absolute top-full right-6 w-72 bg-white shadow-xl rounded-lg z-50">
+    <ul className="divide-y divide-dashed">
       {[
-        "About us",
-        "Campus Recruitment Trainings",
-        "Skill Club",
-        "Categories",
-        "Blogs",
-        "Forum",
-        "Internship",
-        "Sikar Center",
-        "Contact Us",
-        "Help & Support",
-        "Verify Certificate",
+        { name: "Product", link: "/product", internal: true },
+        { name: "About Us", link: "https://pedestaltechnoworld.com/about" },
+        { name: "Campus Recruitment Trainings", link: "https://pedestaltechnoworld.com/placement-guarantee-courses" },
+        { name: "Skill Club", link: "https://pedestaltechnoworld.com/pedestal-skill-club" },
+        { name: "Categories", link: "https://pedestaltechnoworld.com/categories" },
+        { name: "Blogs", link: "https://blog.pedestaltechnoworld.com/" },
+        { name: "Forum", link: "https://pedestaltechnoworld.com/forum" },
+        { name: "Internship", link: "https://internship.pedestaltechnoworld.com/" },
+        { name: "Sikar Center", link: "https://sikar.pedestaltechnoworld.com/" },
+        { name: "Contact Us", link: "https://pedestaltechnoworld.com/contact" },
+        { name: "Help & Support", link: "https://pedestaltechnoworld.com/help-support" },
+        { name: "Verify Certificate", link: "https://pedestaltechnoworld.com/truecopy" },
       ].map((item, i) => (
         <li
           key={i}
           onClick={() => setOpen(false)}
-          className="px-6 py-3 text-sm border-b border-dashed hover:bg-gray-50 cursor-pointer"
+          className="px-6 py-3 text-sm hover:bg-gray-50 cursor-pointer"
         >
-          {item}
+          {item.internal ? (
+            <Link to={item.link} className="font-bold block">
+              {item.name}
+            </Link>
+          ) : (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold block"
+            >
+              {item.name}
+            </a>
+          )}
         </li>
       ))}
     </ul>
   </div>
 )}
+
 
 
 
@@ -232,7 +249,7 @@ Reset
     </div>
 
     {/* Location Cards */}
-    <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-24">
+    <div className="hidden md:flex flex flex-col md:flex-row items-center justify-center gap-12 mb-24">
 
       <div className="bg-blue-900/40 backdrop-blur-lg rounded-3xl p-5 w-56 shadow-xl">
         <div className="bg-white rounded-2xl p-3">
@@ -269,17 +286,17 @@ Reset
     {/* Footer */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-sm text-blue-200">
 
-      <div>
-        
-          <img className="text-white text-xl font-semibold mb-4" src="https://pedestaltechnoworld.com/front-end/asset/images/icons/footer-icon/footer-logo.png" alt="" />
-     
+      <div className="text-center ">
+         <div className="flex justify-center items-center">
+          <img className="text-white  text-xl font-semibold mb-4" src="https://pedestaltechnoworld.com/front-end/asset/images/icons/footer-icon/footer-logo.png" alt="" />
+         </div>
         <p>
           Pedestal Techno World Private Limited is an India’s leading
           EdTech company bridging the gap between industry and students.
         </p>
       </div>
 
-      <div>
+      <div className="text-center">
         <h4 className="text-white font-semibold mb-4">
           Explore Pedestal
         </h4>
@@ -293,7 +310,7 @@ Reset
         </ul>
       </div>
 
-      <div>
+      <div className="text-center">
         <h4 className="text-white font-semibold mb-4">
           Top Learning Tracks
         </h4>
@@ -307,7 +324,7 @@ Reset
         </ul>
       </div>
 
-      <div>
+      <div className="text-center">
         <h4 className="text-white font-semibold mb-4">
           Connect With Us
         </h4>
